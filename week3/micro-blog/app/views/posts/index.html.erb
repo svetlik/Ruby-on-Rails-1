@@ -1,0 +1,11 @@
+<h1>Posts</h1>
+
+<% if @posts.none? %>
+  <strong>There are no posts</strong>
+<% else %>
+  <%= render 'posts_table' %>
+<% end %>
+
+<p>
+  <%= link_to 'Create new', new_post_path %>
+</p>
