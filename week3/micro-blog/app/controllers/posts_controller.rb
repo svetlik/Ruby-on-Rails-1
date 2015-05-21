@@ -18,7 +18,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    if Post.where(id: params[:id]).present?
+      @post = Post.find(params[:id])
+    else
+      render 'error'
+    end
   end
 
   def destroy
